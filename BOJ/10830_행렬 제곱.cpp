@@ -1,4 +1,4 @@
-#include "matrix.h"
+#include "../library/matrix.h"
 
 #define mod 1000
 
