@@ -1,4 +1,3 @@
-#include <cstdio>
 #include "matrix.h"
 
 #define mod 1000

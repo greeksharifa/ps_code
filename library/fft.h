@@ -1,9 +1,5 @@
 #pragma once
 
-#include <complex>
-#include <cmath>
-#include <algorithm>
-
 #include "re_define.h"
 
 typedef complex<double> base;

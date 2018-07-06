@@ -1,8 +1,5 @@
-#include <vector>
-
 #include "re_define.h"
 #include "bit_library.h"
-
 
 vvi mat_mul(vvi matrix_A, vvi matrix_B, int mod) {
     int m = matrix_A.size();
