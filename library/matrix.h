@@ -17,14 +17,14 @@ vvi mat_mul(vvi matrix_A, vvi matrix_B, int mod) {
 }
 
 vvi matrix_power_N(vvi matrix, int N, int mod, bool print) {
-    int m = matrix.size(), cnt;
+    int m = matrix.size(), len = binary_len(N);
     vvi original = matrix;
     vvi ret = vvi(m, vi(m));
     for (int i = 0; i < m; i++)
         ret[i][i] = 1;
-    pi tmp = bit_reverse(N);
-    N = tmp.first, cnt = tmp.second;
-    while (cnt--) {
+    
+	N = bit_reverse(N);
+    while (len--) {
         ret = mat_mul(ret, ret, mod);
         if (N & 1) {
             ret = mat_mul(ret, original, mod);
