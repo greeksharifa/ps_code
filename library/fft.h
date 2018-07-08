@@ -51,26 +51,3 @@ vi multiply(vi &A, vi &B) {
         ret[i] = (int)round(a[i].real());
     return ret;
 }
-
-void decimal_print(vi &A) {
-    int i = 0;
-    while (i < A.size()) {
-        if (A[i] >= 10) {
-            if (i == A.size() - 1)
-                A.push_back(A[i] / 10);
-            else
-                A[i + 1] += A[i] / 10;
-            A[i] %= 10;
-        }
-        ++i;
-    }
-
-    reverse(all(A));
-
-    bool start = false;
-    for (auto elem : A) {
-        if (elem)start = true;
-        if (start)cout << elem;
-    }
-    if (!start)cout << '0';
-}
