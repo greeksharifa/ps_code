@@ -1,9 +1,9 @@
 #pragma once
 
-#include "re_define.h"
+#include "sharifa_header.h"
 
-vi string_to_vi(string& s) {
-    vi ret(s.size());
+vector<int> string_to_vi(string& s) {
+    vector<int> ret(s.size());
     for (int i = 0; i < s.size(); i++)
         ret[i] = s[i] - '0';
     return ret;

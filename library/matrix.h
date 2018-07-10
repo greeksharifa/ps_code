@@ -1,9 +1,9 @@
-#include "re_define.h"
+#include "sharifa_header.h"
 #include "bit_library.h"
 
-vvi mat_mul(vvi matrix_A, vvi matrix_B, int mod) {
+vector<vector<int> > mat_mul(vector<vector<int> > matrix_A, vector<vector<int> > matrix_B, int mod) {
     int m = matrix_A.size();
-    vvi ret(m, vi(m));
+    vector<vector<int> > ret(m, vector<int>(m));
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < m; j++) {
             for (int k = 0; k < m; k++) {
@@ -16,10 +16,10 @@ vvi mat_mul(vvi matrix_A, vvi matrix_B, int mod) {
 
 }
 
-vvi matrix_power_N(vvi matrix, int N, int mod, bool print) {
+vector<vector<int> > matrix_power_N(vector<vector<int> > matrix, int N, int mod, bool print) {
     int m = matrix.size(), len = binary_len(N);
-    vvi original = matrix;
-    vvi ret = vvi(m, vi(m));
+    vector<vector<int> > original = matrix;
+    vector<vector<int> > ret = vector<vector<int> >(m, vector<int>(m));
     for (int i = 0; i < m; i++)
         ret[i][i] = 1;
     

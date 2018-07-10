@@ -1,59 +1,38 @@
-#include "re_define.h"
+#include "sharifa_header.h"
 #include "bit_library.h"
 
-#include <stdio.h>
-#include <vector>
-int arr[11] = {0, 5, 3, 1, 0, 9, 3, -2, 6, -5, 2};
-struct FenwickTree
-{
+template <typename T>
+class FenwickTree {
+public:
     int size;
-    vector<int> data;
-    FenwickTree(int N){
-        size = 1;
-        while (size < N){
-            size <<= 1;
-        }
-        data = vector<int>(size + 1, 0);
-        for (int i = 1; i <= N; i++)
-        {
-            int j = i;
-            while (j <= size)
-            {
-                data[j] += arr[i];
-                j += j & (-j);
-            }
+    vector<T> arr;
+    vector<ll> data;
+
+    FenwickTree<T>(int _N) {
+        size = _N;
+        arr.resize(_N + 1);
+        size = power_of_2_eg_than(_N);
+        data.resize(size + 1);
+    }
+
+    void update(int x, T val) {
+        T delta_val = val - arr[x];
+        arr[x] = val;
+
+        while (x <= size) {
+            data[x] += delta_val;
+            x += (x&-x);
         }
     }
-    void update(int n, int val)
-    {
-        int before = n;
-        while (n <= size)
-        {
-            data[n] += val – arr[before];
-            n += n & (-n);
+    ll sum(int x) {
+        ll ret = 0;
+        while (x) {
+            ret += data[x];
+            x -= (x&-x);
         }
-        arr[before] = val;
+        return ret;
     }
-    int sum(int n)
-    {
-        int result = 0;
-        while (n)
-        {
-            result += data[n];
-            n &= n – 1;
-        }
-        return result;
-    }
-    int sum(int a, int b)
-    {
-        return sum(b) – sum(a – 1);
+    ll sum(int x, int y) {
+        return sum(y) - sum(x - 1);
     }
 };
-int main()
-{
-    FenwickTree BIT = FenwickTree(10);
-    printf(“% d\n”, BIT.sum(2, 5));
-    BIT.update(4, 7);
-    printf(“% d\n”, BIT.sum(2, 5));
-    return 0;
-}

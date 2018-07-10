@@ -1,16 +1,11 @@
-#include<cstdio>
-#include<stack>
-
-#include "../library/re_define.h"
-
-using namespace std;
+#include "../library/sharifa_header.h"
 
 int main_06549() {
     int n;
     while (true) {
         scanf("%d", &n);
         if (!n)break;
-        stack<pi> st;
+        stack<pair<int,int> > st;
         ll ans = 0;
         for (int i_index = 0; i_index <= n; i_index++) {
             int i_height;
@@ -25,7 +20,7 @@ int main_06549() {
                 left = st.top().first;
                 st.pop();
             }
-            st.push(mp(left, i_height));
+            st.push(make_pair(left, i_height));
         }
         printf("%lld\n", ans);
     }

@@ -6,11 +6,11 @@ int main_13277() {
     ios::sync_with_stdio(false);    cin.tie(NULL);
     string a, b;
     cin >> a >> b;
-    vi A = string_to_vi(a);
-    vi B = string_to_vi(b);
-    reverse(all(A));	reverse(all(B));
+    vector<int> A = string_to_vi(a);
+    vector<int> B = string_to_vi(b);
+    reverse(A.begin(), A.end());	reverse(B.begin(), B.end());
 
-    vi ret = multiply(A, B);
+    vector<int> ret = multiply(A, B);
 
     int i = 0;
     while (i < ret.size()) {
@@ -24,7 +24,7 @@ int main_13277() {
         ++i;
     }
 
-    reverse(all(ret));
+    reverse(ret.begin(), ret.end());
 
     bool start = false;
     for (auto elem : ret) {

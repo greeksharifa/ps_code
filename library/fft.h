@@ -4,7 +4,7 @@ fft 함수는 http://topology-blog.tistory.com/6 블로그를 참조한 것입니다.
 
 #pragma once
 
-#include "re_define.h"
+#include "sharifa_header.h"
 #include "bit_library.h"
 
 typedef complex<double> base;
@@ -34,9 +34,9 @@ void fft(vector<base> &a, bool inv) {
     }
 }
 
-vi multiply(vi &A, vi &B) {
-    vector<base> a(all(A));
-    vector<base> b(all(B));
+vector<int> multiply(vector<int> &A, vector<int> &B) {
+    vector<base> a(A.begin(), A.end());
+    vector<base> b(B.begin(), B.end());
     int n = power_of_2_eg_than(max(a.size(), b.size())) * 2;
 
     a.resize(n);	b.resize(n);
@@ -46,7 +46,7 @@ vi multiply(vi &A, vi &B) {
         a[i] *= b[i];
     fft(a, true);
 
-    vi ret(n);
+    vector<int> ret(n);
     for (int i = 0; i < n; i++)
         ret[i] = (int)round(a[i].real());
     return ret;

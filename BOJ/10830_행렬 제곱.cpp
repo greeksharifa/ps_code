@@ -6,7 +6,7 @@ int main_10830() {
     int m, N;
     scanf("%d%d", &m, &N);
 
-    vvi original = vvi(m, vi(m));
+    vector<vector<int> > original = vector<vector<int> >(m, vector<int>(m));
     for (int i = 0; i < m; i++)
         for (int j = 0; j < m; j++)
             scanf("%d", &original[i][j]);
