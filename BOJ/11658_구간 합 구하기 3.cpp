@@ -1,5 +1,5 @@
 #include "../library/sharifa_header.h"
-#include "../library/Fenwick_tree_2D_BIT.h"
+#include "../library/fenwick_tree_2D_BIT.h"
 
 int N, m;
 

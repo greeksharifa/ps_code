@@ -1,3 +1,5 @@
+#pragma once
+
 #include "sharifa_header.h"
 
 class FenwickTree2D {
