@@ -1,5 +1,4 @@
 #include "sharifa_header.h"
-#include "bit_library.h"
 
 template <typename T>
 class FenwickTree {
@@ -10,8 +9,7 @@ public:
 
     FenwickTree<T>(int _N) {
         size = _N;
-        arr.resize(_N + 1);
-        size = power_of_2_eg_than(_N);
+        arr.resize(size + 1);
         data.resize(size + 1);
     }
 

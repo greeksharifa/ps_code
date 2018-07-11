@@ -1,5 +1,4 @@
 #include "sharifa_header.h"
-#include "bit_library.h"
 
 class FenwickTree2D {
 public:
@@ -7,7 +6,7 @@ public:
 	vector<vector<long long> > data;
 
     FenwickTree2D(int _N){
-        size = power_of_2_eg_than(_N);
+        size = _N;
         data = vector<vector<long long> >(size + 1, vector<long long>(size + 1));
     }
 

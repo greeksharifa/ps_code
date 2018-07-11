@@ -1,4 +1,3 @@
-#include "../library/bit_library.h"
 #include "../library/conversion_library.h"
 #include "../library/fft.h"
 

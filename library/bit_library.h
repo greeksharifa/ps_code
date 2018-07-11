@@ -22,7 +22,7 @@ T bit_reverse(T n) {
 }
 
 template <typename T>
-T power_of_2_eg_than(T n) {
+T power_of_2_ge_than(T n) {
     T ret = 1;
     while (n > ret) ret <<= 1;
     return ret;
