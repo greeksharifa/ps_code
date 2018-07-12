@@ -1,13 +1,16 @@
 #include "../library/dinic.h"
 
-int E, cap, u, v;
-Dinic network;
+#define MAX_V 52
+#define S 0     // source
+#define T 25    // sink
+#define INF 1000000009
 
-int main() {
+int E, cap, u, v;
+Dinic network(MAX_V, S, T);
+
+int main_06086() {
     ios::sync_with_stdio(false);    cin.tie(NULL);
     cin >> E;
-
-    network.init();
 
     while (E--) {
         char x, y;
@@ -16,7 +19,7 @@ int main() {
         u = 'A' <= x && x <= 'Z' ? x - 'A' : x - 'a' + 26;
         v = 'A' <= y && y <= 'Z' ? y - 'A' : y - 'a' + 26;
 
-        network.addEdge(u, v, cap);
+        network.addEdge(u, v, cap, true);
     }
 
     int ans = 0;
