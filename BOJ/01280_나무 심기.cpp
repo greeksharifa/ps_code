@@ -37,7 +37,7 @@ public:
 FenwickTree BIT;
 int N, p_i;
 
-int main_02042() {
+int main_01280() {
     //freopen("input.txt", "r", stdin);
     ios::sync_with_stdio(false);    cin.tie(NULL);
     cin >> N >> p_i;    ++p_i;
